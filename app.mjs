@@ -1,8 +1,5 @@
-const rect = {
-    perimeter: (x,y) => 2 * ( x + y ),
-    area: (x, y) => x * y,
 
-}
+import { area, perimeter } from './rectangle.mjs';
 
 function solverect(l,w) {
     console.log(`Solving for rectangle with dimensions: ${l}, ${w}`);
@@ -10,8 +7,8 @@ function solverect(l,w) {
         console.log(`Rectangle dimension must be greater than zero. Received: ${l} , ${w}`);
     }
     else{
-        console.log(`Area of rectangle: ${rect.area(l,w)}`);
-        console.log(`Perimeter of rectangle: ${rect.perimeter(l,w)}`);
+        console.log(`Area of rectangle: ${area(l,w)}`);
+        console.log(`Perimeter of rectangle: ${perimeter(l,w)}`);
     }
 }
 
