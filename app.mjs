@@ -1,15 +1,24 @@
 
-import { area, perimeter } from './rectangle.mjs';
+import rect from './rectangle.mjs';
 
 function solverect(l,w) {
     console.log(`Solving for rectangle with dimensions: ${l}, ${w}`);
-    if(l<=0 || w <=0){
-        console.log(`Rectangle dimension must be greater than zero. Received: ${l} , ${w}`);
-    }
-    else{
-        console.log(`Area of rectangle: ${area(l,w)}`);
-        console.log(`Perimeter of rectangle: ${perimeter(l,w)}`);
-    }
+
+    rect(l,w,
+        
+        (err, rectangle) => {
+            if(err){
+                console.log('ERROR: ', err.message);
+            }
+            else{
+            console.log(`Area of rectangle: ${rectangle.area()}`);
+            console.log(`Perimeter of rectangle: ${rectangle.perimeter()}`);
+            }
+        }
+
+    )
+
+    console.log('this statement is logged after the call to rect()');
 }
 
 solverect(2,4);
